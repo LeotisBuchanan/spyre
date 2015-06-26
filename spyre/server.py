@@ -36,7 +36,7 @@ ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 templateLoader = jinja2.FileSystemLoader( searchpath=ROOT_DIR )
 templateEnv = jinja2.Environment( loader=templateLoader )
 
-
+print "hi"
 
 class Root(object):
 	def __init__(self,templateVars=None, 
@@ -328,7 +328,6 @@ class App(object):
 		arguments: params (dict)
 		returns: html (string)
 		"""
-		return None
 		try:
 			return eval("self."+str(params['output_id'])+"(params)")
 		except AttributeError:
